@@ -1,3 +1,5 @@
+import { GrEdit } from "react-icons/gr";
+import { MdOutlineDelete } from "react-icons/md";
 function Datatable({ DataTop, Data, Seccion, EditDelete }) {
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -45,10 +47,10 @@ function Datatable({ DataTop, Data, Seccion, EditDelete }) {
                             ) : null}
                             <td className="px-6 py-4 text-center">
                                 <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => EditDelete(item, 'edit')}>
-                                    Editar
+                                    <GrEdit size={20} />
                                 </button>
                                 <button className="font-medium ml-2 text-red-600 dark:text-red-500 hover:underline" onClick={() => EditDelete(item, 'delete')}>
-                                    Eliminar
+                                    <MdOutlineDelete size={20} />
                                 </button>
                             </td>
                         </tr>
