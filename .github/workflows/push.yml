@@ -15,6 +15,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install dependencies (client)
+        run: |
+          cd client
+          npm install
       - name: Install dependencies (server)
         run: |
           cd server
@@ -28,6 +32,7 @@ jobs:
         run: |
           cd client
           npm run dev
+
       # Si tienes tests en el cliente
       - name: Test client
         run: |
