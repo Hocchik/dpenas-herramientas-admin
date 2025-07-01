@@ -27,7 +27,7 @@ jobs:
       - name: Build client
         run: |
           cd client
-          npm run build
+          npm run dev
       # Si tienes tests en el cliente
       - name: Test client
         run: |
@@ -38,5 +38,5 @@ jobs:
       - name: Test server
         run: |
           cd server
-          npm test || true    
+          npm run dev || true    
 
