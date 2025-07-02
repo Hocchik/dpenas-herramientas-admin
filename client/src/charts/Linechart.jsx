@@ -1,11 +1,18 @@
-import React from 'react';
 import { LineChart as MuiLineChart } from '@mui/x-charts';
+import PropTypes from 'prop-types';
+
+LineChart.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.number),
+    labels: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+    height: PropTypes.number,
+    className: PropTypes.string,
+};
 
 function LineChart({
     data = [2, 5.5, 2, 8.5, 1.5, 5],
     labels = [1, 2, 3, 5, 8, 10],
     height = 300,
-    className = '',
+    className = ''
 }) {
     return (
         <div className={className}>
