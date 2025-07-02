@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
+
 import authAdminRoutes from './src/routes/authAdmin.routes.js';
 import platillosRoutes from './src/routes/platillos.routes.js';
 import MesasRoutes from './src/routes/mesas.routes.js';
