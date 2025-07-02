@@ -30,6 +30,11 @@ jobs:
           cd client
           npm run lint || true
 
+
+      # Si tienes tests en el servidor
+      - name: Fix ESLint permissions (Linux)
+        run: chmod +x ./node_modules/.bin/eslint
+        working-directory: server    
       # Si tienes tests en el servidor
       - name: Test server
         run: |
