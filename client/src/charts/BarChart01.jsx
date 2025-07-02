@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react';
 import { useThemeProvider } from '../utils/ThemeContext';
 
 import { chartColors } from './ChartjsConfig';
@@ -201,3 +201,4 @@ function BarChart01({
 }
 
 export default BarChart01;
+ */

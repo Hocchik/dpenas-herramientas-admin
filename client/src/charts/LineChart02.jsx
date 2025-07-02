@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react';
 import { useThemeProvider } from '../utils/ThemeContext';
 
 import { chartColors } from './ChartjsConfig';
@@ -181,7 +181,7 @@ function LineChart02({
           </div>
         </div>
       </div>
-      {/* Chart built with Chart.js 3 */}
+      
       <div className="grow">
         <canvas ref={canvas} width={width} height={height}></canvas>
       </div>
@@ -189,4 +189,4 @@ function LineChart02({
   );
 }
 
-export default LineChart02;
+export default LineChart02; */

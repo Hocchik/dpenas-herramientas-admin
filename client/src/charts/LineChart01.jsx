@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react';
 import { useThemeProvider } from '../utils/ThemeContext';
 
 import { chartColors } from './ChartjsConfig';
@@ -95,4 +95,4 @@ function LineChart01({
   );
 }
 
-export default LineChart01;
+export default LineChart01; */
