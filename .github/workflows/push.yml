@@ -30,14 +30,32 @@ jobs:
           cd client
           npm run lint || true
 
-
       # Si tienes tests en el servidor
       - name: Fix ESLint permissions (Linux)
         run: chmod +x ./node_modules/.bin/eslint
         working-directory: server    
-      # Si tienes tests en el servidor
+      
       - name: Test server
         run: |
           cd server
           npm run lint || true    
 
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /ruta/a/tu/app
+            git pull origin master
+            npm install --prefix server
+            npm install --prefix client
+            npm run build --prefix client
+            pm2 restart all
