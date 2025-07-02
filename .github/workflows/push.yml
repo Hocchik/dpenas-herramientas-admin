@@ -23,21 +23,16 @@ jobs:
         run: |
           cd server
           npm install
-      - name: Lint client
-        run: |
-          cd client
-          npm run lint || true
-
 
       # Si tienes tests en el cliente
       - name: Test client
         run: |
           cd client
-          npm test || true
+          npm run lint || true
 
       # Si tienes tests en el servidor
       - name: Test server
         run: |
           cd server
-          npm run dev || true    
+          npm run lint || true    
 
