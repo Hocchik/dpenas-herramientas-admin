@@ -10,6 +10,7 @@ import MesasRoutes from './src/routes/mesas.routes.js';
 import ReservaRoutes from './src/routes/reservas.routes.js';
 
 const app = express();
+module.exports = app;
 
 app.use(cors({
     origin: 'http://localhost:5173',

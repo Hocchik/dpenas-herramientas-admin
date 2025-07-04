@@ -1,0 +1,17 @@
+name: Deploy to Render / CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Backend Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_BACK }}
+
+      - name: Trigger Frontend Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_FRONT }}
