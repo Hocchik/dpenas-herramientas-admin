@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: '18'  # O la versión que estés usando
 
-      - run: |
-          cd server
-          npm install
-          npm run test || true
+      - run: cd server
+      - run: npm install
+      - run: npm run test

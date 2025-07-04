@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm cd client
+      - run: cd client
       - run: npm run lint
     
   lint-server:
@@ -22,5 +22,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
            node-version: '18'
-      - run: npm cd server
+      - run: cd server
       - run: npm run lint
