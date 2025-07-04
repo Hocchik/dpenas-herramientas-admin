@@ -3,15 +3,37 @@ name: Deploy to Render / CD
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  deploy:
+  deploy-client:
     runs-on: ubuntu-latest
-
+    permissions:
+      deployments: write
     steps:
-      - name: Trigger Backend Deploy
-        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_BACK }}
+      - name: Deploy Frontend
+        uses: JorgeLNJunior/render-deploy@v1.4.5
+        with:
+          service_id: ${{ secrets.RENDER_CLIENT_ID }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          clear_cache: true
+          wait_deploy: true
+          github_deployment: true
+          deployment_environment: 'production'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Trigger Frontend Deploy
-        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_FRONT }}
+  deploy-server:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+    steps:
+      - name: Deploy Backend
+        uses: JorgeLNJunior/render-deploy@v1.4.5
+        with:
+          service_id: ${{ secrets.RENDER_SERVER_ID }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          clear_cache: true
+          wait_deploy: true
+          github_deployment: true
+          deployment_environment: 'production'
+          github_token: ${{ secrets.GITHUB_TOKEN }}

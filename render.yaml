@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: dpenas-client
+    env: node
+    rootDir: client
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    plan: starter
+    autoDeploy: true
+
+  - type: web
+    name: dpenas-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm run dev
+    plan: starter
+    autoDeploy: true
