@@ -19,6 +19,10 @@ jobs:
           cd server
           npm install
 
+      - name: Fix Test permissions (Linux)
+        run: chmod +x ./node_modules/.bin/mocha
+        working-directory: server
+
       - name: Run server tests
         run: |
           cd server 
