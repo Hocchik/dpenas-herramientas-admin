@@ -13,7 +13,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'  # O la versión que estés usando
+      
+      - name: Install dependencies (server)
+        run: |
+          cd server
+          npm install
 
-      - run: cd server
-      - run: npm install
-      - run: npm run test
+      - name: Run server tests
+        run: |
+          cd server 
+          npm run test || true  

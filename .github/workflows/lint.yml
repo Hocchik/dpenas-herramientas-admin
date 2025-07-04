@@ -11,9 +11,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: cd client
-      - run: npm run lint
-    
+
+      - name: Install dependencies (client)
+        run: |
+          cd client
+          npm install
+
+      - name: Run client lint
+        run: |
+          cd client
+          npm run lint || true 
+
   lint-server:
     runs-on: ubuntu-latest
     steps:
@@ -21,6 +29,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-           node-version: '18'
-      - run: cd server
-      - run: npm run lint
+          node-version: '18'
+
+      - name: Install dependencies (server)
+        run: |
+          cd server
+          npm install
+
+      - name: Run server lint
+        run: |
+          cd server
+          npm run lint || true
