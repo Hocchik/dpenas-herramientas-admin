@@ -1,4 +1,4 @@
-/* // Import Chart.js
+// Import Chart.js
 import { Chart, Tooltip } from 'chart.js';
 // Import Tailwind config
 import { tailwindConfig, hexToRGB } from '../utils/Utils';
