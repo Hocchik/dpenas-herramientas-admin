@@ -60,4 +60,4 @@ export const chartColors = {
     dark: tailwindConfig().theme.colors.gray[600],
   },
 };
- */
+ 
